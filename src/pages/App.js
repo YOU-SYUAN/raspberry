@@ -5,7 +5,20 @@ import Temp from "../assets/temp.png";
 import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
 import Chart from "../components/Chart";
+import Sun from "../assets/sun.png";
+import Rain from "../assets/rain.png";
+
 function App() {
+  // const weatherimg = [
+  //   {
+  //     title: "sun",
+  //     image: Sun,
+  //   },
+  //   {
+  //     title: "rain",
+  //     image: Rain,
+  //   },
+  // ];
   return (
     <div className="App">
       <Container maxWidth="xl">
@@ -13,8 +26,8 @@ function App() {
           <Grid container direction="row" spacing={2}>
             <Grid item xs={4}>
               <Stack direction="column" spacing={2}>
-                <Card></Card>
-                <Card></Card>
+                <Card img={Sun} msg="28°c"></Card>
+                <Card img={Rain} msg="50%"></Card>
               </Stack>
             </Grid>
             <Grid item xs={8}>
