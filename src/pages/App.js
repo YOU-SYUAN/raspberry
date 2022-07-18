@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     console.log(window.location.hostname);
     setWs(
-      webSocket(`http://192.168.168.113:8080/`, {
+      webSocket(`http://${window.location.hostname}/`, {
         transports: ["websocket"],
       })
     );
