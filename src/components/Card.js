@@ -19,13 +19,28 @@ const bull = (
 
 export default function BasicCard(props) {
   return (
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
+    <Card sx={{ display: "flex" }}>
+      <CardContent sx={{ width: "100%" }}>
         <Grid container direction="row" spacing={1}>
-          <Typography variant="h1" component="div">
+          <Grid item xs={6}>
+            <Grid
+              item
+              md={3}
+              style={{ width: "100%", height: "100%" }}
+              fontSize={"min(20vw, 5rem)"}
+            >
+              {props.msg}
+            </Grid>
+          </Grid>
+          {/* <Typography fontSize={80} align="center" xs={6}>
             {props.msg}
-          </Typography>
-          <img src={props.img}></img>
+          </Typography> */}
+          <Grid item xs={6} sx={{ textAlign: "right" }}>
+            <img
+              src={props.img}
+              style={{ maxHeight: "100px", height: "100%", maxWidth: "100%" }}
+            ></img>
+          </Grid>
         </Grid>
       </CardContent>
       {/* <CardActions>
