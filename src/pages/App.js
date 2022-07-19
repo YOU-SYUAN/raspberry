@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <header className="App-header">
           <Grid container direction="row" spacing={2}>
             <Grid item xs={12} sm={4}>

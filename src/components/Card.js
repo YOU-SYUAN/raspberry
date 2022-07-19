@@ -19,7 +19,7 @@ const bull = (
 
 export default function BasicCard(props) {
   return (
-    <Card sx={{ display: "flex" }}>
+    <Card sx={{ display: "flex", p: 5, m: 10 }}>
       <CardContent sx={{ width: "100%" }}>
         <Grid container direction="row" spacing={1}>
           <Grid item xs={6}>
@@ -38,7 +38,7 @@ export default function BasicCard(props) {
           <Grid item xs={6} sx={{ textAlign: "right" }}>
             <img
               src={props.img}
-              style={{ maxHeight: "100px", height: "100%", maxWidth: "100%" }}
+              style={{ maxHeight: "100px", maxWidth: "100%" }}
             ></img>
           </Grid>
         </Grid>

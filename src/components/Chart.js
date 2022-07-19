@@ -166,13 +166,13 @@ export default function App() {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <ComposedChart
-        width={800}
-        height={400}
+        width={1200}
+        height={500}
         data={data}
         margin={{
-          top: 100,
+          top: 80,
           right: 20,
-          bottom: 20,
+          bottom: 5,
           left: 20,
         }}
       >
