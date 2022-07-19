@@ -144,7 +144,7 @@ export default function App() {
   //data.push({ hour: "23", temp: 28, humid: 30 });
   //連接api 抓資料
   function interval() {
-    var dataUrl = "http://192.168.168.113:8080/api/getLast24Hours";
+    var dataUrl = "/api/getLast24Hours";
     fetch(dataUrl, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
