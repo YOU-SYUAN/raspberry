@@ -1,3 +1,4 @@
+import { fontSize, padding } from "@mui/system";
 import React, { useEffect } from "react";
 //api: http://192.168.113:8080/api/getLast24Hours
 
@@ -144,7 +145,7 @@ export default function App() {
   //data.push({ hour: "23", temp: 28, humid: 30 });
   //連接api 抓資料
   function interval() {
-    var dataUrl = "/api/getLast24Hours";
+    var dataUrl = "http://192.168.168.113:8080/api/getLast24Hours";
     fetch(dataUrl, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
@@ -166,24 +167,46 @@ export default function App() {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <ComposedChart
-        width={1200}
+        width={1000}
         height={500}
         data={data}
         margin={{
           top: 80,
-          right: 20,
-          bottom: 5,
-          left: 20,
+          right: 30,
+          bottom: 10,
+          left: 40,
         }}
       >
+        {/* label={{ value: "hour", position: "right" }} */}
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="hour" />
-        <YAxis dataKey="humid" />
-        <YAxis dataKey="temp" />
+        <XAxis
+          dataKey="hour"
+          interval={4}
+          label={{
+            value: "time",
+            position: "insideBottomRight",
+            offset: 2,
+            fontSize: "20px",
+          }}
+        />
+        <YAxis dataKey="humid" orientation="right" yAxisId={"right"} unit="%" />
+        <YAxis dataKey="temp" orientation="left" yAxisId={"left"} unit="℃" />
         <Tooltip />
         <Legend />
-        <Bar type="monotone" dataKey="humid" strokeWidth={3} fill="#7A86B6" />
-        <Line type="monotone" dataKey="temp" stroke="#82ca9d" strokeWidth={3} />
+        <Line
+          type="monotone"
+          dataKey="temp"
+          stroke="#82ca9d"
+          strokeWidth={3}
+          yAxisId={"left"}
+        />
+        <Bar
+          type="monotone"
+          dataKey="humid"
+          strokeWidth={3}
+          fill="#6E8AB6"
+          yAxisId={"right"}
+        />
       </ComposedChart>
     </ResponsiveContainer>
   );
